@@ -1,0 +1,11 @@
+.add-donor-container {
+    display: flex;
+    align-items: center;
+    height: 95vh;
+    form {
+        width: 60%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+}

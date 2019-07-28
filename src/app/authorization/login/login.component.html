@@ -1,9 +1,9 @@
 <div class="container">
     <div class="signin-signup mat-elevation-z20">
 
-        <div [formGroup]="loginForm" class="login-form">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
             <mat-form-field>
-                <input matInput [formControl]="email" placeholder="Enter your Email ID please">
+                <input matInput formControlName="email" placeholder="Enter your Email ID please">
             </mat-form-field>
             <div *ngIf="email.invalid && loginForm.touched" class="error alert">
                 Enter a valid Email ID
@@ -22,7 +22,7 @@
                 <img src="assets/images/btn_google_signin.png" alt="">
             </div>
             
-        </div>
+        </form>
 
     </div>
 </div>

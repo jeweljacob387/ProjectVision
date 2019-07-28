@@ -1,0 +1,40 @@
+<div class="add-donor-container">
+  <form [formGroup]="dataForm" (ngSubmit)="addNewDonor()">
+    <mat-form-field>
+      <mat-select>
+        <mat-label>Select the blood group</mat-label>
+        <mat-option *ngFor="let group of bloodGroups" [value]="group.value">
+          {{group.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="name" type="text" placeholder="Enter the Full name of donor">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="houseName" type="text" placeholder="Enter the house name">
+      <mat-icon matSuffix>home</mat-icon>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="contactNumber" type="tel" placeholder="Enter donors contact number">
+      <mat-icon matSuffix>contact_phone</mat-icon>
+    </mat-form-field>
+    <mat-checkbox formControlName="isParishMember" (change)="addOrRemoveUnitName()">Belongs to Anathadam Parish
+    </mat-checkbox>
+    <mat-form-field *ngIf="dataForm.controls.isParishMember.value">
+      <input matInput formControlName="unitName" type="text" placeholder="Enter the Family Unit Name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="alternateContactPerson" type="text"
+        placeholder="Enter an alternate contact person">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="relation" type="text"
+        placeholder="Enter the relation of alternate contact person">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="alternateContactNumber" type="text" placeholder="Enter alternate contact number">
+    </mat-form-field>
+  </form>
+</div>
