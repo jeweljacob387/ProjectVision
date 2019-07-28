@@ -1,1 +1,28 @@
-<div id="google-signIn" data-onsuccess="onSignIn">SignIn</div>
+<div class="container">
+    <div class="signin-signup mat-elevation-z20">
+
+        <div [formGroup]="loginForm" class="login-form">
+            <mat-form-field>
+                <input matInput [formControl]="email" placeholder="Enter your Email ID please">
+            </mat-form-field>
+            <div *ngIf="email.invalid && loginForm.touched" class="error alert">
+                Enter a valid Email ID
+            </div>
+            <button [disabled]="email.invalid" mat-raised-button color="primary" class=login-button (click)="login()">
+                Login
+            </button>
+
+            <mat-divider class="divider"></mat-divider>
+
+            <h3>OR</h3>
+
+            <mat-divider class="divider"></mat-divider>
+
+            <div id="google-signIn" data-onsuccess="onSignIn">
+                <img src="assets/images/btn_google_signin.png" alt="">
+            </div>
+            
+        </div>
+
+    </div>
+</div>
